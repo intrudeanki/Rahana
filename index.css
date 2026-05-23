@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-base: #F9F8F6;
+  --bg-surface: #FFFFFF;
+  --bg-sidebar: #F3F1ED;
+  --text-primary: #2C332A;
+  --text-secondary: #5C665A;
+  --text-muted: #8A9488;
+  --brand-primary: #8BA888;
+  --brand-secondary: #D38C7D;
+  --brand-accent: #E3D5CA;
+  --emotion-empathy: #E8B4B8;
+  --emotion-logic: #A8C0CE;
+  --emotion-joy: #E2C275;
+  --emotion-sadness: #B5B1CB;
+  --emotion-neutral: #8BA888;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Figtree', sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-base);
+  color: var(--text-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, \"Courier New\", monospace;
+}
+
+@layer base {
+  :root {
+    --background: 40 14% 97%;
+    --foreground: 100 10% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 100 10% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 100 10% 18%;
+    --primary: 140 16% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 25 25% 85%;
+    --secondary-foreground: 100 10% 18%;
+    --muted: 40 14% 92%;
+    --muted-foreground: 120 8% 54%;
+    --accent: 25 25% 85%;
+    --accent-foreground: 100 10% 18%;
+    --destructive: 0 60% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 10% 88%;
+    --input: 30 10% 88%;
+    --ring: 140 16% 60%;
+    --chart-1: 140 16% 60%;
+    --chart-2: 10 46% 66%;
+    --chart-3: 200 22% 73%;
+    --chart-4: 45 65% 67%;
+    --chart-5: 260 18% 75%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer base {
+  [data-debug-wrapper=\"true\"] {
+    display: contents !important;
+  }
+  [data-debug-wrapper=\"true\"] > * {
+    margin-left: inherit;
+    margin-right: inherit;
+    margin-top: inherit;
+    margin-bottom: inherit;
+    padding-left: inherit;
+    padding-right: inherit;
+    padding-top: inherit;
+    padding-bottom: inherit;
+    column-gap: inherit;
+    row-gap: inherit;
+    gap: inherit;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--brand-accent);
+  border-radius: 999px;
+}
+
+/* Breathing animation for AI thinking */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.02); opacity: 1; }
+}
+
+.animate-breathe {
+  animation: breathe 2s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.3s ease-out forwards;
+}
